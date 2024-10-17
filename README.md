@@ -8,6 +8,11 @@
 6. NPM 1,2 Studi kasus mahasiswa & nilai
 
 ### 1. Membuat database universitas
+- Tabel Mahasiswa
+![table_mhs](https://github.com/user-attachments/assets/3e0def96-d143-4252-ac2b-39b79b33cc88)
+- Tabel Nilai
+![table_nilai](https://github.com/user-attachments/assets/c5fee227-3d94-46f5-997d-73de738e533f)
+
 ```  php
 <?php
 //Koneksi
@@ -37,7 +42,7 @@ Kelas Database ini berfungsi untuk mengelola koneksi ke database MySQL. Kelas in
 otomatis menghubungkan ke database ketika diinstansiasi. Kelas ini menggunakan objek mysqli
 untuk melakukan koneksi dan memastikan koneksi berhasil.
 
-### - Struktur Kelas
+### Struktur Kelas
 1. Properti
 - $host : Nama host server database (default: localhost).
 - $db_name : Nama database yang akan dihubungkan
@@ -48,4 +53,6 @@ untuk melakukan koneksi dan memastikan koneksi berhasil.
 - __construct() :  Saat kelas diinstansiasi, konstruktor ini akan memanggil fungsi connect()
 untuk membuat koneksi ke database.
 3. Metode Kelas
-- connect() : Metode ini digunakan untuk melakukan koneksi ke database MySQL. Jika koneksi gagal, metode ini akan memberi pesan kesalahan dan menghentikan eksekusi dengan die(), jika berhasil, koneksi akan disimpan dalam properti $conn.
+- connect() : Metode ini digunakan untuk melakukan koneksi ke database MySQL. Jika koneksi
+gagal, metode ini akan memberi pesan kesalahan dan menghentikan eksekusi dengan die(), jika
+berhasil, koneksi akan disimpan dalam properti $conn.
