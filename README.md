@@ -8,7 +8,7 @@
 6. Studi kasus mahasiswa & nilai
 
 1. Membuat database universitas
-''' php
+```  php
 <?php
 //Koneksi
 class Database {
@@ -30,6 +30,7 @@ class Database {
     }
 }
 ?>
-'''
+
+```
 ### Deskripsi
 Kelas Database ini berfungsi untuk mengelola koneksi ke database MySQL. Kelas ini secara otomatis menghubungkan ke database ketika diinstansiasi. Kelas ini menggunakan objek mysqli untuk melakukan koneksi dan memastikan koneksi berhasil.
