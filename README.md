@@ -2,7 +2,12 @@
 ## Deskripsi
 
 ## Tugas 2
-## 1. Membuat View berbasis OOP, dengan mengambil data dari database MySQL
+### Studi kasus mahasiswa dan nilai
+- Tabel Mahasiswa
+![table_mhs](https://github.com/user-attachments/assets/3e0def96-d143-4252-ac2b-39b79b33cc88)
+- Tabel Nilai
+![table_nilai](https://github.com/user-attachments/assets/c5fee227-3d94-46f5-997d-73de738e533f)
+### 1. Membuat View berbasis OOP, dengan mengambil data dari database MySQL
 Untuk membuat View berbasis Object-Oriented Programming (OOP), kita menggunakan kelas View di
 dalam file view.php. Kelas ini bertanggung jawab untuk menampilkan data mahasiswa yang diambil
 dari database MySQL.
@@ -33,14 +38,20 @@ class View {
 }
 ```
 
+### 2. Gunakan _construct sebagai link ke database
+Konstruktor (constructor) digunakan untuk menghubungkan aplikasi dengan database MySQL,
+memastikan koneksi hanya dibuat sekali saat objek kelas Database diinisialisasi.
+
+Kelas Database: Kelas ini bertanggung jawab untuk membuat koneksi ke MySQL, dan koneksi ini
+disimpan dalam properti public $conn agar bisa diakses oleh kelas lain, seperti View.
+- Di sini, constructor (__construct) memanfaatkan mysqli untuk terhubung ke database dengan menggunakan kredensial seperti nama host, nama pengguna, kata sandi, dan nama database.
 ### Langkah-langkah:
 
-Saat objek dari kelas Database dibuat, konstruktor otomatis dijalankan dan membuat koneksi ke MySQL.
-Properti conn yang merupakan instance dari objek mysqli dapat digunakan oleh kelas lain untuk menjalankan query SQL, seperti yang dilakukan di kelas View dalam fungsi tampilkanMahasiswa().
-## 2. Gunakan _construct sebagai link ke database
-Konstruktor (constructor) digunakan untuk menghubungkan aplikasi dengan database MySQL, memastikan koneksi hanya dibuat sekali saat objek kelas Database diinisialisasi.
+- Saat objek dari kelas Database dibuat, konstruktor otomatis dijalankan dan membuat koneksi
+ke MySQL.
+Properti conn yang merupakan instance dari objek mysqli dapat digunakan oleh kelas lain untuk
+menjalankan query SQL, seperti yang dilakukan di kelas View dalam fungsi tampilkanMahasiswa().
 
-Kelas Database: Kelas ini bertanggung jawab untuk membuat koneksi ke MySQL, dan koneksi ini disimpan dalam properti public $conn agar bisa diakses oleh kelas lain, seperti View.
 ``` php
 <?php
 // Kelas Database untuk melakukan koneksi ke database MySQL
@@ -71,7 +82,7 @@ class Database {
 }
 ?>
 ```
-3. Terapkan enkapsulasi sesuai logika studi kasus
+### 3. Terapkan enkapsulasi sesuai logika studi kasus
 Enkapsulasi adalah konsep OOP yang bertujuan untuk menyembunyikan detail implementasi (data
 atau metode) dari luar kelas, hanya menyediakan akses melalui metode khusus yang diizinkan.
 Dalam proyek ini, enkapsulasi diterapkan dengan menggunakan modifier akses private pada
@@ -90,32 +101,37 @@ class View {
     }
 }
 ```
-5. Membuat kelas turunan menggunakan konsep pewarisan
+### 5. Membuat kelas turunan menggunakan konsep pewarisan
+Pewarisan (inheritance) adalah konsep OOP yang memungkinkan sebuah kelas mewarisi properti dan
+metode dari kelas lain. Dalam tugas ini, konsep pewarisan diterapkan pada kelas MahasiswaJkt
+dan MahasiswaPwt, yang merupakan turunan dari kelas induk Mahasiswa. Kelas-kelas ini mewarisi
+semua properti dan metode dari kelas Mahasiswa, namun dapat menambahkan atau mengubah perilaku
+sesuai kebutuhan.
+``` php
+class MahasiswaJkt extends Mahasiswa {
+    public function tampilkanMahasiswa() {
+        // Custom query untuk mahasiswa dari Jakarta
+    }
+}
+
+class MahasiswaPwt extends Mahasiswa {
+    public function tampilkanMahasiswa() {
+        // Custom query untuk mahasiswa dari Purwokerto
+    }
+}
+```
+
 6. Terapkan polimorfisme untuk minimal 2 peran sesuai studi kasus
-7. NPM 1,2 Studi kasus mahasiswa & nilai
+Polimorfisme memungkinkan objek yang berbeda bertindak dengan cara yang sama, tetapi dengan
+implementasi yang berbeda. Dalam proyek ini, polimorfisme diterapkan pada kelas MahasiswaJkt
+dan MahasiswaPwt, yang masing-masing memiliki implementasi berbeda dalam cara mereka
+menampilkan data mahasiswa, meskipun mereka menggunakan nama metode yang sama
+(tampilkanMahasiswa()).
+- Kelas MahasiswaJkt akan menjalankan query untuk menampilkan data mahasiswa dari Jakarta.
+- Kelas MahasiswaPwt akan menjalankan query untuk menampilkan data mahasiswa dari Purwokerto.
+Meskipun kedua kelas menggunakan metode dengan nama yang sama (tampilkanMahasiswa()), hasil
+yang ditampilkan akan berbeda, tergantung dari kelas mana objek tersebut dipanggil.
 
-### 1. Membuat database universitas
-- Tabel Mahasiswa
-![table_mhs](https://github.com/user-attachments/assets/3e0def96-d143-4252-ac2b-39b79b33cc88)
-- Tabel Nilai
-![table_nilai](https://github.com/user-attachments/assets/c5fee227-3d94-46f5-997d-73de738e533f)
 
-### Deskripsi
-Kelas Database ini berfungsi untuk mengelola koneksi ke database MySQL. Kelas ini secara
-otomatis menghubungkan ke database ketika diinstansiasi. Kelas ini menggunakan objek mysqli
-untuk melakukan koneksi dan memastikan koneksi berhasil.
 
-### Struktur Kelas
-1. Properti
-- $host : Nama host server database (default: localhost).
-- $db_name : Nama database yang akan dihubungkan
-- $username : Nama pengguna MySQL untuk autentifikasi (default: root).
-- $password : Kata sandi pengguna MySQL (default: '', tidak ada password.
-- $conn : Objek koneksi mysqli yang menyimpan koneksi ke database.
-2. Konstruktor
-- __construct() :  Saat kelas diinstansiasi, konstruktor ini akan memanggil fungsi connect()
-untuk membuat koneksi ke database.
-3. Metode Kelas
-- connect() : Metode ini digunakan untuk melakukan koneksi ke database MySQL. Jika koneksi
-gagal, metode ini akan memberi pesan kesalahan dan menghentikan eksekusi dengan die(), jika
-berhasil, koneksi akan disimpan dalam properti $conn.
+
