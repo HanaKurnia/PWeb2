@@ -135,7 +135,7 @@ yang ditampilkan akan berbeda, tergantung dari kelas mana objek tersebut dipangg
 - Tampilan awal
 ![index.php](https://github.com/user-attachments/assets/41c3fa94-2e1e-4a15-8588-94c0f21e206f)
 - Data Mahasiswa
-- ![mahasiswa.php](https://github.com/user-attachments/assets/9f77c6ac-f6d4-4c77-a2a1-ec29f1802856)
+![mahasiswa.php](https://github.com/user-attachments/assets/9f77c6ac-f6d4-4c77-a2a1-ec29f1802856)
 - Data Mahasiswa Jakarta
 ![mhs_jkt](https://github.com/user-attachments/assets/c7d3d02e-3bef-4e5f-8b12-185951e2fa9d)
 - Data Nilai
