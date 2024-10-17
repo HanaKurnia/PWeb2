@@ -33,4 +33,19 @@ class Database {
 
 ```
 ### Deskripsi
-Kelas Database ini berfungsi untuk mengelola koneksi ke database MySQL. Kelas ini secara otomatis menghubungkan ke database ketika diinstansiasi. Kelas ini menggunakan objek mysqli untuk melakukan koneksi dan memastikan koneksi berhasil.
+Kelas Database ini berfungsi untuk mengelola koneksi ke database MySQL. Kelas ini secara
+otomatis menghubungkan ke database ketika diinstansiasi. Kelas ini menggunakan objek mysqli
+untuk melakukan koneksi dan memastikan koneksi berhasil.
+
+### - Struktur Kelas
+1. Properti
+- $host : Nama host server database (default: localhost).
+- $db_name : Nama database yang akan dihubungkan
+- $username : Nama pengguna MySQL untuk autentifikasi (default: root).
+- $password : Kata sandi pengguna MySQL (default: '', tidak ada password.
+- $conn : Objek koneksi mysqli yang menyimpan koneksi ke database.
+2. Konstruktor
+- __construct() :  Saat kelas diinstansiasi, konstruktor ini akan memanggil fungsi connect()
+untuk membuat koneksi ke database.
+3. Metode Kelas
+- connect() : Metode ini digunakan untuk melakukan koneksi ke database MySQL. Jika koneksi gagal, metode ini akan memberi pesan kesalahan dan menghentikan eksekusi dengan die(), jika berhasil, koneksi akan disimpan dalam properti $conn.
