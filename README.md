@@ -131,6 +131,10 @@ menampilkan data mahasiswa, meskipun mereka menggunakan nama metode yang sama
 - Kelas MahasiswaPwt akan menjalankan query untuk menampilkan data mahasiswa dari Purwokerto.
 Meskipun kedua kelas menggunakan metode dengan nama yang sama (tampilkanMahasiswa()), hasil
 yang ditampilkan akan berbeda, tergantung dari kelas mana objek tersebut dipanggil.
+### Output 
+- Tampilan awal
+![index.php](https://github.com/user-attachments/assets/41c3fa94-2e1e-4a15-8588-94c0f21e206f)
+
 
 
 
