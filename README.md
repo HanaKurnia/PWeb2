@@ -5,9 +5,9 @@
 3. Terapkan enkapsulasi sesuai logika studi kasus
 4. Membuat kelas turunan menggunakan konsep pewarisan
 5. Terapkan polimorfisme untuk minimal 2 peran sesuai studi kasus
-6. Studi kasus mahasiswa & nilai
+6. NPM 1,2 Studi kasus mahasiswa & nilai
 
-1. Membuat database universitas
+### 1. Membuat database universitas
 ```  php
 <?php
 //Koneksi
