@@ -1,6 +1,6 @@
 # Praktikum Web 2
 ## Deskripsi
-
+Dibuat untuk memenuhi Tugas 2 Praktikum Web 2
 ## Tugas 2
 ### Studi kasus mahasiswa dan nilai
 - Tabel Mahasiswa
@@ -121,7 +121,7 @@ class MahasiswaPwt extends Mahasiswa {
 }
 ```
 
-6. Terapkan polimorfisme untuk minimal 2 peran sesuai studi kasus
+### 6. Terapkan polimorfisme untuk minimal 2 peran sesuai studi kasus
 Polimorfisme memungkinkan objek yang berbeda bertindak dengan cara yang sama, tetapi dengan
 implementasi yang berbeda. Dalam proyek ini, polimorfisme diterapkan pada kelas MahasiswaJkt
 dan MahasiswaPwt, yang masing-masing memiliki implementasi berbeda dalam cara mereka
