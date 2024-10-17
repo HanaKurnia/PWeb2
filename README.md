@@ -1,6 +1,32 @@
 # Praktikum Web 2
 ## Tugas 2
-1. Membuat View berbasis OOP, dengan mengambil data dari database MySQL
+## 1. Membuat View berbasis OOP, dengan mengambil data dari database MySQL
+Untuk membuat View berbasis Object-Oriented Programming (OOP), kita menggunakan kelas View di
+dalam file view.php. Kelas ini bertanggung jawab untuk menampilkan data mahasiswa yang diambil
+dari database MySQL.
+### Langkah-langkahnya:
+
+- Kelas View: Kelas ini diimplementasikan untuk menampilkan data mahasiswa. Kelas ini memiliki
+sebuah properti private $db yang menyimpan koneksi database.
+
+- Konstruktor: Konstruktor dari kelas View menerima objek Database sebagai parameter, yang
+digunakan untuk menginisialisasi koneksi ke database MySQL. Ini memungkinkan kelas View untuk
+memanfaatkan database secara efisien.
+``` php
+class View {
+    private $db;
+    
+    public function __construct(Database $database) {
+        $this->db = $database->conn;
+    }
+    
+    public function tampilkanMahasiswa() {
+        $query = "SELECT mahasiswa_id, nim, nama_mhs, alamat, email, no_telp, jurusan FROM mahasiswa";
+        $result = $this->db->query($query);
+        // Menampilkan data dalam bentuk tabel HTML
+    }
+}
+```
 2. Gunakan _construct sebagai link ke database
 3. Terapkan enkapsulasi sesuai logika studi kasus
 4. Membuat kelas turunan menggunakan konsep pewarisan
