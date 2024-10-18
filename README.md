@@ -11,6 +11,11 @@ Dibuat untuk memenuhi Tugas 2 Praktikum Web 2
 Untuk membuat View berbasis Object-Oriented Programming (OOP), kita menggunakan kelas View di
 dalam file view.php. Kelas ini bertanggung jawab untuk menampilkan data mahasiswa yang diambil
 dari database MySQL.
+- tampilkan.php digunakan untuk menampilkan data mahasiswa dan kelas turunannya seperti mahasiswaJkt dan mahasiswaPwt
+![view](https://github.com/user-attachments/assets/37b7b613-9242-41a4-aa86-74f43b0b99a2)
+
+
+
 ### Langkah-langkah:
 
 - Kelas View: Kelas ini diimplementasikan untuk menampilkan data mahasiswa. Kelas ini memiliki
